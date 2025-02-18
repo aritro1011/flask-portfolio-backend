@@ -4,6 +4,10 @@ from flask_cors import CORS  # Import CORS to enable cross-origin requests
 from dotenv import load_dotenv
 import os
 import google.generativeai as genai
+from flask_cors import CORS
+
+# Enable CORS only for the frontend domain
+CORS(app, resources={r"/api/*": {"origins": "https://aritro-portfolio.vercel.app"}})  
 
 # Load environment variables from the .env file
 load_dotenv()
